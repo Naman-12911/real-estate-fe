@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./src/images/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CI Builders</title>
+    <script>
+      if (localStorage.theme === 'dark' || !('theme' in localStorage)) {
+        document.querySelector('html').classList.add('dark');
+        document.querySelector('html').style.colorScheme = 'dark';
+      } else {
+        document.querySelector('html').classList.remove('dark');
+        document.querySelector('html').style.colorScheme = 'light';
+      }        
+    </script>
+    <style type="text/css">
+      html{
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+}
+      ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+      }
+      ::-webkit-scrollbar-button {
+        width: 0px;
+        height: 0px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #e1e1e1;
+        /* border: 0px none #ffffff; */
+        /* border-radius: 50px; */
+      }
+      /* ::-webkit-scrollbar-thumb:hover {
+        background: #ffffff;
+      } */
+      ::-webkit-scrollbar-thumb:active {
+        /* background: #000000; */
+      }
+      ::-webkit-scrollbar-track {
+        background: #666666;
+        border: 0px none #ffffff;
+        /* border-radius: 50px; */
+      }
+      /* ::-webkit-scrollbar-track:hover {
+        background: #666666;
+      } */
+      ::-webkit-scrollbar-track:active {
+        /* background: #333333; */
+      }
+      ::-webkit-scrollbar-corner {
+        background: transparent;
+      }
+
+      @media (max-width: 786px) {
+    .flatpickr-calendar {
+        position: fixed;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(0%, -50%);
+        /* Hacky way to get the background overlay */
+        outline: 999999px solid rgba(0, 0, 0, 0.5);
+        max-width: 100%;
+    }
+
+    .flatpickr-calendar .flatpickr-innerContainer {
+        margin: auto;
+        /* overflow-x: scroll; */
+    }
+
+    .flatpickr-calendar.arrowTop:before,
+    .flatpickr-calendar.arrowTop:after,
+    .flatpickr-calendar.arrowBottom:before,
+    .flatpickr-calendar.arrowBottom:after,
+    .flatpickr-calendar.arrowLeft:before,
+    .flatpickr-calendar.arrowLeft:after,
+    .flatpickr-calendar.arrowRight:before,
+    .flatpickr-calendar.arrowRight:after,
+    .flatpickr-calendar.arrowCenter:before,
+    .flatpickr-calendar.arrowCenter:after {
+        display: none;
+    }
+}
+      
+      </style>      
+  </head>
+  <body class="font-inter antialiased bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script>
+        if (localStorage.getItem('sidebar-expanded') == 'true') {
+            document.querySelector('body').classList.add('sidebar-expanded');
+        } else {
+            document.querySelector('body').classList.remove('sidebar-expanded');
+        }
+    </script>   
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
