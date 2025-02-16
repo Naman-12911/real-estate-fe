@@ -163,7 +163,7 @@ const ConstructorPreviousBills = lazy(() => import('./pages/Worker/ConstructorPr
 const ConstructorEditUnit = lazy(() => import('./pages/Worker/ConstructorEditUnit'));
 
 
-import { onMessageListener } from './firebase';
+// import { onMessageListener } from './firebase';
 import Spinner from './components/Spinner';
 import { Capacitor } from '@capacitor/core';
 import nativeAppStatusBar from './components/advanceComponent/nativeAppStatusBar';
@@ -214,19 +214,19 @@ function App() {
 
 
 
-    const listenForMessages = () => {
-      if(!Capacitor.isNativePlatform()){
-          onMessageListener()
-          .then((payload) => {
-            // console.log(payload)   
-          })
-        .catch((err) => {
-            console.log(`An error occurred when showing notification: ${err}`);
-        });
-      }
-    }
+  //   const listenForMessages = () => {
+  //     if(!Capacitor.isNativePlatform()){
+  //         onMessageListener()
+  //         .then((payload) => {
+  //           // console.log(payload)   
+  //         })
+  //       .catch((err) => {
+  //           console.log(`An error occurred when showing notification: ${err}`);
+  //       });
+  //     }
+  //   }
 
-  listenForMessages();
+  // listenForMessages();
 
   // CapacitorApp.addListener('backButton', ({canGoBack}) => {
   //   if(!canGoBack){

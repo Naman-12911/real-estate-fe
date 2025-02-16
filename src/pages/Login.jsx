@@ -10,9 +10,9 @@ import { useDispatch } from 'react-redux'
 import { userLogin } from '../app/User'
 import { baseURL } from '../Constant'
 import { userTypePush } from '../app/UserType'
-import { requestForToken } from '../firebase'
-import { initializePushNotifications } from '../components/advanceComponent/pushNotifications'
-import { Capacitor } from '@capacitor/core'
+// import { requestForToken } from '../firebase'
+// import { initializePushNotifications } from '../components/advanceComponent/pushNotifications'
+// import { Capacitor } from '@capacitor/core'
 
 export default function Login() {
 	const dispatch=useDispatch();
@@ -56,12 +56,12 @@ const handleSubmit=(e)=>{
 				const activeRoles=getActiveRoles(res.data)
 				localStorage.setItem("user_type",JSON.stringify(activeRoles));
 				dispatch(userTypePush(JSON.stringify(activeRoles)));
-				if(Capacitor.isNativePlatform()){
-					initializePushNotifications(navigate);
-				}
-				else{
-					requestForToken();
-				}
+				// if(Capacitor.isNativePlatform()){
+				// 	initializePushNotifications(navigate);
+				// }
+				// else{
+				// 	// requestForToken();
+				// }
 				setEmail('')
 				setPassword('')
 				if(res.data.email=="sureshsirci@gmail.com"){
